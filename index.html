@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 OLED Message Sender (Master)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 OLED Message Sender (Master)</h1>
+
+        <form action="/login" method="POST" id="loginForm">
+            <input type="password" name="password" placeholder="Enter password" required>
+            <input type="submit" value="Login">
+        </form>
+
+        <form action="/send" method="POST" id="messageForm">
+            <input type="text" name="message" placeholder="Enter message" required>
+            <select name="target">
+                <option value="both">Send to Both (Master & Slave)</option>
+                <option value="master">Send to Only Master</option>
+                <option value="slave">Send to Only Slave</option>
+            </select>
+            <input type="submit" value="Send Message">
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <h2>Message Sent Successfully!</h2>
+            <div class="button-group">
+                <a href="/send" class="send-message">Send Another Message</a>
+                <a href="/logout" class="logout">Log Out</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
